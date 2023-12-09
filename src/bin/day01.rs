@@ -30,10 +30,28 @@ fn part_one(input: &str) -> i32 {
 
 fn part_two(input: &str) -> i32 {
     let num_strs = [
-        "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
+        ("one", "o1e"),
+        ("two", "t2o"),
+        ("three", "t3ree"),
+        ("four", "f4ur"),
+        ("five", "f5ve"),
+        ("six", "s6x"),
+        ("seven", "s7ven"),
+        ("eight", "e8ght"),
+        ("nine", "n9ne"),
     ];
 
-    part_one(input)
+    let parsed = input
+        .lines()
+        .map(|line| {
+            num_strs
+                .iter()
+                .fold(line.to_string(), |ln, (digit, rep)| ln.replace(digit, rep))
+                + "\n"
+        })
+        .collect::<String>();
+
+    part_one(&parsed)
 }
 
 fn main() {
