@@ -5,7 +5,7 @@ pub mod day_02;
 
 #[derive(PartialEq, Debug)]
 pub enum Solution {
-    Number(isize),
+    Number(usize),
     Str(String),
 }
 
@@ -20,7 +20,7 @@ pub trait AdventDay {
             .parse::<u8>()
             .unwrap_or_else(|_| {
                 panic!(
-                    "ERROR: {} should follow convention `DayXX`: XX -> 01, 02 etc.",
+                    "ERROR: `{}` should follow convention `DayXX`: XX -> 01, 02 etc.",
                     full_name
                 )
             });
@@ -29,9 +29,10 @@ pub trait AdventDay {
         let eg2_path = format!("data/example/{}-2.txt", day_number);
 
         let main_input = read_to_string(&main_path)
-            .unwrap_or_else(|_| panic!("ERROR: Failed to read input for day {}", day_number));
-        let eg1_input = read_to_string(&eg1_path)
-            .unwrap_or_else(|_| panic!("ERROR: Failed to read eg 1 input for day {}", day_number));
+            .unwrap_or_else(|_| panic!("Failed to read input for day `{}`", day_number));
+        let eg1_input = read_to_string(&eg1_path).unwrap_or_else(|_| {
+            panic!("ERROR: Failed to read eg 1 input for day `{}`", day_number)
+        });
         let eg2_input = read_to_string(&eg2_path).unwrap_or(eg1_input.clone());
 
         if cfg!(test) {
