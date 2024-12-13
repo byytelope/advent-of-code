@@ -70,13 +70,13 @@ mod tests {
 
     #[test]
     fn day_02p1() {
-        let res = Day02 {}.part_1();
+        let res = Day02.part_1();
         assert_eq!(res, Solution::Number(2));
     }
 
     #[test]
     fn day_02p2() {
-        let res = Day02 {}.part_2();
+        let res = Day02.part_2();
         assert_eq!(res, Solution::Number(4));
     }
 }

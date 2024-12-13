@@ -22,13 +22,13 @@ mod tests {
 
     #[test]
     fn day_XXp1() {
-        let res = DayXX {}.part_1();
+        let res = DayXX.part_1();
         assert_eq!(res, Solution::Number(1));
     }
 
     #[test]
     fn day_XXp2() {
-        let res = DayXX {}.part_2();
+        let res = DayXX.part_2();
         assert_eq!(res, Solution::Number(1));
     }
 }
