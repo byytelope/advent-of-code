@@ -3,6 +3,7 @@ use std::{any::type_name, fs::read_to_string};
 pub mod day_01;
 pub mod day_02;
 pub mod day_03;
+pub mod day_04;
 
 #[derive(PartialEq, Debug)]
 pub enum Solution {
